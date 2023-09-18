@@ -12,8 +12,9 @@ type APIResponse = {
 } | {
     status: 'NOT_FOUND',
 } | {
-    status: 'ERROR'
-}
+    status: 'ERROR',
+    description : string
+} 
 
 
 function manageAPIResponse(response : APIResponse) : number {
@@ -23,6 +24,8 @@ function manageAPIResponse(response : APIResponse) : number {
             return 0;
         case 'NOT_FOUND':
             return 1;
+        case 'ERROR' : 
+            return 2
         default:
             console.log(response)
             throw 'status unknown';

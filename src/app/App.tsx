@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import ex1 from '../exercices/ex2';
-import ex2 from '../exercices/ex1';
+import ex1 from '../exercices/ex1';
+import ex2 from '../exercices/ex2';
 import ex3 from '../exercices/ex3';
 import ex4 from '../exercices/ex4';
 import ex5 from '../exercices/ex5';
@@ -11,7 +11,7 @@ import ex6 from '../exercices/ex6';
 
 export default function App() {
 
-    const exercices : {id:number, handler:()=>void}[] = [
+    const exercices : {id:number, handler:()=>void | string}[] = [
         {id:1, handler:ex1},
         {id:2, handler:ex2},
         {id:3, handler:ex3},

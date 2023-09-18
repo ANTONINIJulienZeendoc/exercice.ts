@@ -1,6 +1,17 @@
 // Typer les objets suivants
+type user = {
+    firstName: string,
+    lastName: string,
+    sex: string,
+    age?: number,
+    accountChecked: boolean,
+};
 
-const users = {
+type users = {
+    [key: string]:user
+};
+
+const users:users = {
     "48f2f7d6-00bc-4d13-9fb3-4e1ca0ca93ec": {
         firstName: "Wava",
         lastName: "D'Amore",
@@ -26,8 +37,8 @@ const users = {
 // Typer correctement l'entrée (un utilisateur) et la sortie (une chaine de char) de la fonction suivante
 // Retourner dans une chaine, le nom en majuscule, le prénom et l'age si présent
 
-function briefDescription(user: unknown) {
-    return '';
+function briefDescription(user: user):string {
+    return `${user.firstName.toUpperCase()} ${user.lastName.toUpperCase()} ${user.hasOwnProperty('age') ? String(user.age) :''}`.trimRight();
 }
 
 export default function ex2() {
