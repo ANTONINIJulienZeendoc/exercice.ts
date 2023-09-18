@@ -10,7 +10,7 @@ type item = {
    quantity:number
 }
 
-type user = {
+interface user {
    firstName:string,
    lastName:string,
    accountChecked: boolean,
